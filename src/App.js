@@ -22,7 +22,7 @@ const Home = () => (
     <Header />
     <About />
     {/* <BestSellerMenu /> */}
-    <Laurels />
+    {/* <Laurels /> */}
     <Chef />
     <MarqueeDemo />
     {/* <MenuPage /> */}

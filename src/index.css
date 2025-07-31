@@ -149,3 +149,14 @@ a {
   0%, 100% { filter: hue-rotate(0deg); }
   50% { filter: hue-rotate(90deg); }
 }
+
+
+@media (max-width: 768px) {
+  .gallery-title {
+    font-size: 2rem;
+  }
+}
+
+/* section{
+  padding: 40px 0;
+} */
