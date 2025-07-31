@@ -34,10 +34,20 @@ module.exports = {
         slideBottom: {
           '0%': { transform: 'translateY(-25%)' },
           '100%': { transform: 'translateY(0%)' },
-        }
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-100% - var(--gap)))' },
+        },
+        'marquee-vertical': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(calc(-100% - var(--gap)))' },
+        },
       },
       animation: {
         slideBottomAnimation: 'slideBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        marquee: 'marquee var(--duration) infinite linear',
+        'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
       },
       fontFamily: {
         CormorantUpright: ['Cormorant Upright', 'sans-serif'], 

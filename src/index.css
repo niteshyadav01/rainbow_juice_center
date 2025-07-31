@@ -7,7 +7,7 @@
 :root {
   --font-base: 'Cormorant Upright', serif;
   --font-alt: 'Open Sans', sans-serif;
-  
+
   --color-golden: orange;
   --color-black: #0C0C0C;
   --color-gray: #545454;
@@ -15,7 +15,6 @@
   --color-grey: #AAAAAA;
   --color-white: #FFFFFF;
 }
-
 
 * {
   box-sizing: border-box;
@@ -110,3 +109,43 @@ a {
   white-space: nowrap !important;
 }
 
+ @layer base {
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.gallery-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #d2691e, #cd853f, #daa520, #f4a460, #ff8c00, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow 3s ease-in-out infinite;
+}
+
+@keyframes rainbow {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(90deg); }
+}

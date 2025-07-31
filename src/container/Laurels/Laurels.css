@@ -25,21 +25,7 @@
   color: #2c3e50;
 }
 
-.gallery-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  background: linear-gradient(45deg, #d2691e, #cd853f, #daa520, #f4a460, #ff8c00, #ffa500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rainbow 3s ease-in-out infinite;
-}
-
-@keyframes rainbow {
-  0%, 100% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(90deg); }
-}
+ 
 
 .gallery-subtitle {
   font-size: 1.2rem;
