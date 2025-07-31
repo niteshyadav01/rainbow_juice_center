@@ -1,62 +1,118 @@
 // 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Heart, Award, Leaf, Clock, Users, Star, CheckCircle, Coffee } from 'lucide-react';
 
 export default function WhyChooseRainbow() {
   const [activeFeature, setActiveFeature] = useState(0);
+    const [animatedStats, setAnimatedStats] = useState({
+      years: 0,
+      natural: 0,
+      customers: 0,
+      items: 0
+    });
+  
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        const duration = 2000; // 2 seconds
+        const steps = 60; // 60 steps for smooth animation
+        const interval = duration / steps;
+  
+        let step = 0;
+        const counter = setInterval(() => {
+          step++;
+          const progress = step / steps;
+          
+          setAnimatedStats({
+            years: Math.floor(27 * progress),
+            natural: Math.floor(100 * progress),
+            customers: Math.floor(1000 * progress),
+            items: Math.floor(50 * progress)
+          });
+  
+          if (step >= steps) {
+            clearInterval(counter);
+            setAnimatedStats({
+              years: 27,
+              natural: 100,
+              customers: 1000,
+              items: 50
+            });
+          }
+        }, interval);
+  
+        return () => clearInterval(counter);
+      }, 500); // Start animation after 500ms
+  
+      return () => clearTimeout(timer);
+    }, []);
+  
+    const features = [
+      {
+        icon: <Award className="w-6 h-6" />,
+        title: "Premium Quality Since 1996",
+        description: "Over 27 years of excellence in serving fresh, natural juices and healthy snacks to our valued customers.",
+        highlight: "27+ Years Experience",
+        color: "from-orange-400 to-yellow-500"
+      },
+      {
+        icon: <Leaf className="w-6 h-6" />,
+        title: "100% Natural Ingredients",
+        description: "We use only the freshest fruits and vegetables, with no artificial preservatives or additives in our products.",
+        highlight: "Pure & Natural",
+        color: "from-green-400 to-emerald-500"
+      },
+      {
+        icon: <Heart className="w-6 h-6" />,
+        title: "Made with Love Daily",
+        description: "Every juice is freshly squeezed and every snack is prepared with care, ensuring maximum nutrition and flavor.",
+        highlight: "Fresh Daily",
+        color: "from-pink-400 to-rose-500"
+      },
+      {
+        icon: <Clock className="w-6 h-6" />,
+        title: "Market Fresh Ingredients",
+        description: "We source our fruits and vegetables daily from local markets to guarantee peak freshness and quality.",
+        highlight: "Daily Fresh",
+        color: "from-blue-400 to-cyan-500"
+      }
+    ];
+  
+    const stats = [
+      { 
+        number: `${animatedStats.years}+`, 
+        label: "Years of Excellence", 
+        icon: <Award className="w-5 h-5" />,
+        target: 27
+      },
+      { 
+        number: `${animatedStats.natural}%`, 
+        label: "Natural Ingredients", 
+        icon: <Leaf className="w-5 h-5" />,
+        target: 100
+      },
+      { 
+        number: `${animatedStats.customers}+`, 
+        label: "Happy Customers", 
+        icon: <Users className="w-5 h-5" />,
+        target: 1000
+      },
+      { 
+        number: `${animatedStats.items}+`, 
+        label: "Fresh Items Daily", 
+        icon: <Coffee className="w-5 h-5" />,
+        target: 50
+      }
+    ];
 
-  const features = [
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Premium Quality Since 1996",
-      description: "Over 27 years of excellence in serving fresh, natural juices and healthy snacks to our valued customers.",
-      highlight: "27+ Years Experience",
-      color: "from-orange-400 to-yellow-500"
-    },
-    {
-      icon: <Leaf className="w-8 h-8" />,
-      title: "100% Natural Ingredients",
-      description: "We use only the freshest fruits and vegetables, with no artificial preservatives or additives in our products.",
-      highlight: "Pure & Natural",
-      color: "from-green-400 to-emerald-500"
-    },
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Made with Love Daily",
-      description: "Every juice is freshly squeezed and every snack is prepared with care, ensuring maximum nutrition and flavor.",
-      highlight: "Fresh Daily",
-      color: "from-pink-400 to-rose-500"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Market Fresh Ingredients",
-      description: "We source our fruits and vegetables daily from local markets to guarantee peak freshness and quality.",
-      highlight: "Daily Fresh",
-      color: "from-blue-400 to-cyan-500"
-    },
-    // {
-    //   icon: <Users className="w-8 h-8" />,
-    //   title: "Your Health Partner",
-    //   description: "Committed to promoting healthy living through nutritious, delicious beverages and snacks for the whole family.",
-    //   highlight: "Health Focused",
-    //   color: "from-purple-400 to-indigo-500"
-    // },
-    // {
-    //   icon: <Star className="w-8 h-8" />,
-    //   title: "Quality Guaranteed",
-    //   description: "We stand behind every product we serve with our quality guarantee, ensuring customer satisfaction always.",
-    //   highlight: "Quality Promise",
-    //   color: "from-yellow-400 to-orange-500"
-    // }
-  ];
+ 
 
-  const stats = [
-    { number: "27+", label: "Years of Excellence", icon: <Award className="w-6 h-6" /> },
-    { number: "100%", label: "Natural Ingredients", icon: <Leaf className="w-6 h-6" /> },
-    { number: "1000+", label: "Happy Customers", icon: <Users className="w-6 h-6" /> },
-    { number: "50+", label: "Fresh Items Daily", icon: <Coffee className="w-6 h-6" /> }
-  ];
+  // const stats = [
+  //   { number: "27+", label: "Years of Excellence", icon: <Award className="w-6 h-6" /> },
+  //   { number: "100%", label: "Natural Ingredients", icon: <Leaf className="w-6 h-6" /> },
+  //   { number: "1000+", label: "Happy Customers", icon: <Users className="w-6 h-6" /> },
+  //   { number: "50+", label: "Fresh Items Daily", icon: <Coffee className="w-6 h-6" /> }
+  // ];
 
   const benefits = [
     "Fresh fruit cups and natural juices available daily",
@@ -171,36 +227,7 @@ export default function WhyChooseRainbow() {
         </div>
 
         {/* Bottom Highlight */}
-        <div className="bg-gradient-to-r from-orange-100 via-yellow-100 to-amber-100 rounded-3xl p-8 text-center border border-orange-200">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
-            <Star className="w-8 h-8 text-orange-600" />
-            <div className="w-12 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
-          </div>
-          
-          <h3 className="text-2xl font-bold text-gray-800 mb-3">
-            "A Healthy Way • Fresh Since 1996 • 100% Natural & Pure"
-          </h3>
-          
-          <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-            Rainbow Juice & Snacks Center - Your Health Partner • Quality Guaranteed • Made with Love Daily
-          </p>
-          
-          <div className="flex items-center justify-center gap-8 text-sm text-gray-600">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              <span>Market Fresh</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-              <span>Premium Quality</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-              <span>Daily Prepared</span>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   );

@@ -10,6 +10,27 @@ const HeroSection = () => {
 
   // Hero slides data with unique layouts and natural colors
   const slides = [
+
+
+    {
+      id: 2,
+      title: "Fresh Pasta",
+      subtitle: "& Gourmet Burgers",
+      description: "Experience our delicious menu featuring rich penne pasta with tomato sauce and crispy fried burgers. From fresh cherry tomatoes to golden buns, every dish is made with premium ingredients and served with care.",
+      mainImage: require("../../assets/pasta.jpg"),
+      secondaryImage: require("../../assets/burger.jpg"),
+      thirdImage: require("../../assets/starter.jpg"),
+      badge: "Daily Fresh",
+      specialItem: "Penne Pasta",
+      price: "₹250",
+      bgColor: "from-amber-50 via-orange-50 to-yellow-50",
+      layout: "mosaic",
+      accent: "orange",
+      primaryColor: "orange-600",
+      secondaryColor: "red-500",
+      textColor: "black-500"
+    },
+
     {
       id: 1,
       title: "Fresh Fruit",
@@ -27,23 +48,8 @@ const HeroSection = () => {
       secondaryColor: "orange-500",
       textColor: "amber-800"
     },
-    {
-      id: 2,
-      title: "Chocolate Milkshake",
-      subtitle: "& Fresh Mango Juice",
-      description: "Indulge in our decadent chocolate milkshake topped with whipped cream and Kit Kat pieces, or refresh with our freshly squeezed mango juice. Both made with premium ingredients for the perfect treat.",
-      mainImage: require("../../assets/shakes.png"),
-      secondaryImage: require("../../assets/mango.JPG"),
-      badge: "Kit Kat Topped",
-      specialItem: "Chocolate Milkshake",
-      price: "₹180",
-      bgColor: "from-[#F5E6D3] via-[#F0E6D2] to-[#E6D5C1]",
-      layout: "split",
-      accent: "amber",
-      primaryColor: "amber-600",
-      secondaryColor: "orange-500",
-      textColor: "gray-800"
-    },
+
+
     {
       id: 3,
       title: "Fresh Pasta",
@@ -96,25 +102,25 @@ const HeroSection = () => {
   // Smooth slide change function
   const changeSlide = useCallback((newSlideOrFunction) => {
     if (isTransitioning) return;
-    
+
     setIsTransitioning(true);
-    
+
     // Clear existing timeout
     if (transitionTimeoutRef.current) {
       clearTimeout(transitionTimeoutRef.current);
     }
-    
+
     // Transition to new slide
     transitionTimeoutRef.current = setTimeout(() => {
       setCurrentSlide(prev => {
-        const targetSlide = typeof newSlideOrFunction === 'function' 
-          ? newSlideOrFunction(prev) 
+        const targetSlide = typeof newSlideOrFunction === 'function'
+          ? newSlideOrFunction(prev)
           : newSlideOrFunction;
-        
+
         // Ensure we don't set the same slide
         return targetSlide !== prev ? targetSlide : prev;
       });
-      
+
       // End transition
       transitionTimeoutRef.current = setTimeout(() => {
         setIsTransitioning(false);
@@ -138,16 +144,14 @@ const HeroSection = () => {
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-24 items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Left Content */}
       <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-left order-2 lg:order-1 hero-left-content hero-text-left">
-        <div className={`inline-flex items-center px-4 lg:px-6 py-2 lg:py-3 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 backdrop-blur-md text-amber-800 border border-amber-200 transition-all duration-700 ${
-          isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-        }`}>
+        <div className={`inline-flex items-center px-4 lg:px-6 py-2 lg:py-3 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 backdrop-blur-md text-amber-800 border border-amber-200 transition-all duration-700 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+          }`}>
           <Heart className="w-4 lg:w-5 h-4 lg:h-5 mr-2 lg:mr-3 text-amber-600" />
           <span className="text-sm lg:text-base font-semibold">PREMIUM QUALITY • SINCE 1996</span>
         </div>
 
-        <div className={`transition-all duration-700 delay-100 ${
-          isTransitioning ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
-        }`}>
+        <div className={`transition-all duration-700 delay-100 ${isTransitioning ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
+          }`}>
           <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 lg:mb-6">
             <span className="block text-gray-800 mb-2">{slide.title}</span>
             <span className="block bg-gradient-to-r from-amber-600 via-orange-600 to-yellow-600 bg-clip-text text-transparent">
@@ -159,9 +163,8 @@ const HeroSection = () => {
           </p>
         </div>
 
-        <div className={`flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start transition-all duration-700 delay-200 ${
-          isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-        }`}>
+        <div className={`flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start transition-all duration-700 delay-200 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+          }`}>
           {slide.id === 2 ? (
             <>
               <button className="px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white font-semibold rounded-2xl shadow-2xl hover:shadow-amber-500/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center group backdrop-blur-sm">
@@ -187,9 +190,8 @@ const HeroSection = () => {
           )}
         </div>
 
-        <div className={`grid grid-cols-2 gap-4 lg:gap-8 max-w-sm mx-auto lg:mx-0 transition-all duration-700 delay-300 ${
-          isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-        }`}>
+        <div className={`grid grid-cols-2 gap-4 lg:gap-8 max-w-sm mx-auto lg:mx-0 transition-all duration-700 delay-300 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+          }`}>
           <div className="bg-white/70 backdrop-blur-sm rounded-xl lg:rounded-2xl p-3 lg:p-4 text-center border border-white/50">
             <div className="text-xl lg:text-2xl font-bold text-amber-700">27+</div>
             <div className="text-xs lg:text-sm text-gray-600">Years of Excellence</div>
@@ -202,9 +204,8 @@ const HeroSection = () => {
       </div>
 
       {/* Right Content */}
-      <div className={`relative order-1 lg:order-2 transition-all duration-700 ${
-        isTransitioning ? 'opacity-0 translate-x-8 scale-95' : 'opacity-100 translate-x-0 scale-100'
-      }`}>
+      <div className={`relative order-1 lg:order-2 transition-all duration-700 ${isTransitioning ? 'opacity-0 translate-x-8 scale-95' : 'opacity-100 translate-x-0 scale-100'
+        }`}>
         {slide.id === 2 ? (
           <div className="relative max-w-md mx-auto lg:max-w-none space-y-6">
             {/* Main Image Card */}
@@ -265,9 +266,8 @@ const HeroSection = () => {
 
   const CenteredLayout = ({ slide }) => (
     <div className="text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className={`space-y-6 lg:space-y-8 mb-8 lg:mb-12 transition-all duration-700 ${
-        isTransitioning ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
-      }`}>
+      <div className={`space-y-6 lg:space-y-8 mb-8 lg:mb-12 transition-all duration-700 ${isTransitioning ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'
+        }`}>
         <div className="inline-flex items-center px-4 lg:px-6 py-2 lg:py-3 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 backdrop-blur-md text-amber-800 border border-amber-200">
           <Shield className="w-4 lg:w-5 h-4 lg:h-5 mr-2 lg:mr-3 text-amber-700" />
           <span className="text-sm lg:text-base font-semibold">DECADENT • CHOCOLATE TREAT</span>
@@ -297,22 +297,21 @@ const HeroSection = () => {
       </div>
 
       {/* Centered Image with Floating Cards */}
-      <div className={`relative transition-all duration-700 delay-200 ${
-        isTransitioning ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
-      }`}>
+      <div className={`relative transition-all duration-700 delay-200 ${isTransitioning ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
+        }`}>
         <div className="relative mx-auto max-w-xs sm:max-w-md lg:max-w-lg">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/40 to-green-200/40 rounded-2xl lg:rounded-3xl scale-110"></div>
           <div className="relative bg-white/30 backdrop-blur-md rounded-2xl lg:rounded-3xl overflow-hidden border border-white/40 shadow-2xl">
             <img src={slide.mainImage} alt="Healthy Drinks" className="w-full h-96 sm:h-[500px] lg:h-[600px] object-contain transition-all duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
           </div>
-          
+
           {/* Floating Info Cards */}
           <div className="absolute -left-6 lg:-left-12 top-1/4 bg-white/90 backdrop-blur-sm rounded-lg lg:rounded-xl p-3 lg:p-4 shadow-lg transform -rotate-6 hover:rotate-0 transition-all duration-500 animate-float">
             <div className="text-xl lg:text-2xl font-bold text-amber-700">{slide.price}</div>
             <div className="text-xs lg:text-sm text-gray-600">{slide.specialItem}</div>
           </div>
-          
+
           <div className="absolute -right-4 lg:-right-8 bottom-1/4 bg-amber-600 text-white rounded-lg lg:rounded-xl p-3 lg:p-4 shadow-lg transform rotate-6 hover:rotate-0 transition-all duration-500 animate-float-delayed">
             <div className="text-base lg:text-lg font-bold">Kit Kat</div>
             <div className="text-xs lg:text-sm opacity-90">{slide.badge}</div>
@@ -326,10 +325,9 @@ const HeroSection = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-8 items-start pt-8 md:pt-0">
         {/* Left Column - Text Content */}
-        <div 
-          className={`order-2 lg:order-1 lg:col-span-1 space-y-4 sm:space-y-6 mb-8 md:mb-0 transition-all duration-700 ${
-            isTransitioning ? 'opacity-0 -translate-x-8' : 'opacity-100 translate-x-0'
-          }`}
+        <div
+          className={`order-2 lg:order-1 lg:col-span-1 space-y-4 sm:space-y-6 mb-8 md:mb-0 transition-all duration-700 ${isTransitioning ? 'opacity-0 -translate-x-8' : 'opacity-100 translate-x-0'
+            }`}
           style={{ marginBottom: window.innerWidth < 1024 ? '3rem' : '0' }}
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-rose-100 to-pink-100 backdrop-blur-md text-rose-700 border border-rose-200 premium-wellness-btn">
@@ -353,7 +351,7 @@ const HeroSection = () => {
               <Heart className="w-5 h-5 mr-2" />
               Start Your Journey
             </button>
-            
+
             <div className="grid grid-cols-2 gap-4 text-center">
               <div className="bg-white/60 backdrop-blur-sm rounded-xl p-3 border border-white/40">
                 <div className="text-xl font-bold text-rose-600">500+</div>
@@ -368,10 +366,9 @@ const HeroSection = () => {
         </div>
 
         {/* Right Columns - Image Mosaic */}
-        <div 
-          className={`order-1 lg:order-2 lg:col-span-2 transition-all duration-700 delay-200 ${
-            isTransitioning ? 'opacity-0 translate-y-8 scale-95' : 'opacity-100 translate-y-0 scale-100'
-          }`}
+        <div
+          className={`order-1 lg:order-2 lg:col-span-2 transition-all duration-700 delay-200 ${isTransitioning ? 'opacity-0 translate-y-8 scale-95' : 'opacity-100 translate-y-0 scale-100'
+            }`}
           style={{ marginTop: window.innerWidth < 1024 ? '2rem' : '0' }}
         >
           <div className="grid grid-cols-2 gap-6 h-96">
@@ -419,10 +416,10 @@ const HeroSection = () => {
 
   return (
     <>
-      <div 
+      <div
         className={`relative min-h-screen overflow-hidden md:pt-16 pt-8 bg-gradient-to-br ${currentSlideData.bgColor} transition-all duration-1000 ease-in-out`}
       >
-        
+
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -445,11 +442,10 @@ const HeroSection = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 disabled={isTransitioning}
-                className={`w-4 h-4 rounded-full transition-all duration-500 ${
-                  index === currentSlide 
-                    ? `bg-gradient-to-r from-${currentSlideData.primaryColor} to-${currentSlideData.secondaryColor} scale-125 shadow-lg` 
+                className={`w-4 h-4 rounded-full transition-all duration-500 ${index === currentSlide
+                    ? `bg-gradient-to-r from-${currentSlideData.primaryColor} to-${currentSlideData.secondaryColor} scale-125 shadow-lg`
                     : 'bg-white/50 hover:bg-white/70 hover:scale-110'
-                } ${isTransitioning ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`}
+                  } ${isTransitioning ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`}
               />
             ))}
           </div>
@@ -457,10 +453,9 @@ const HeroSection = () => {
 
         {/* Progress Bar */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 overflow-hidden">
-          <div 
-            className={`h-full bg-gradient-to-r from-${currentSlideData.primaryColor} to-${currentSlideData.secondaryColor} transition-all duration-1000 ease-in-out ${
-              isTransitioning ? 'opacity-50' : 'opacity-100'
-            }`}
+          <div
+            className={`h-full bg-gradient-to-r from-${currentSlideData.primaryColor} to-${currentSlideData.secondaryColor} transition-all duration-1000 ease-in-out ${isTransitioning ? 'opacity-50' : 'opacity-100'
+              }`}
             style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
           />
         </div>

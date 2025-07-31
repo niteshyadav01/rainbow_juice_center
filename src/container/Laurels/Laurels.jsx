@@ -1,195 +1,161 @@
-import React, { useState } from "react";
-import "./Laurels.css";
+import React from 'react'
+import { Loader2 } from 'lucide-react';
+import { BlurFade } from '../../components/UIComponent/blur-fade.tsx';
 
 const Laurels = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const galleryData = [
-    // Fresh Juices Row 1 - Always Visible
+  // Static gallery data
+  const images = [
     {
-      id: 1,
-      category: 'juice',
-      emoji: '🍊',
-      title: 'Rainbow Orange Juice',
-      description: 'Fresh squeezed oranges with natural sweetness',
-      price: '₹45',
-      hidden: false
+      _id: 1,
+      galleryImage: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=300&fit=crop&crop=center",
+      title: "Fresh Orange Juice"
     },
     {
-      id: 2,
-      category: 'juice',
-      emoji: '🥤',
-      title: 'Tropical Mix',
-      description: 'Pineapple, mango, and passion fruit blend',
-      price: '₹55',
-      hidden: false
+      _id: 2,
+      galleryImage: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop&crop=center",
+      title: "Tropical Smoothie"
     },
     {
-      id: 3,
-      category: 'smoothie',
-      emoji: '🍓',
-      title: 'Berry Blast Smoothie',
-      description: 'Mixed berries with yogurt and honey',
-      price: '₹65',
-      hidden: false
+      _id: 3,
+      galleryImage: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&h=300&fit=crop&crop=center",
+      title: "Berry Blast"
     },
     {
-      id: 4,
-      category: 'smoothie',
-      emoji: '🥭',
-      title: 'Mango Paradise',
-      description: 'Creamy mango smoothie with coconut milk',
-      price: '₹60',
-      hidden: false
-    },
-    // Hidden Items - Show after "See More"
-    {
-      id: 5,
-      category: 'juice',
-      emoji: '🍎',
-      title: 'Green Apple Fresh',
-      description: 'Crisp green apples with mint and lime',
-      price: '₹40',
-      hidden: true
+      _id: 4,
+      galleryImage: "https://images.unsplash.com/photo-1626074356565-517a681e40be?w=400&h=300&fit=crop&crop=center",
+      title: "Mango Paradise"
     },
     {
-      id: 6,
-      category: 'juice',
-      emoji: '🍇',
-      title: 'Grape Delight',
-      description: 'Sweet purple grapes with lemon twist',
-      price: '₹50',
-      hidden: true
+      _id: 5,
+      galleryImage: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400&h=300&fit=crop&crop=center",
+      title: "Green Apple Fresh"
     },
     {
-      id: 7,
-      category: 'smoothie',
-      emoji: '🍌',
-      title: 'Banana Energy Boost',
-      description: 'Banana, oats, and almond milk blend',
-      price: '₹50',
-      hidden: true
+      _id: 6,
+      galleryImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center",
+      title: "Grape Delight"
+    },
+    
+    {
+      _id: 8,
+      galleryImage: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=300&fit=crop&crop=center",
+      title: "Rainbow Sandwich"
     },
     {
-      id: 8,
-      category: 'smoothie',
-      emoji: '🥥',
-      title: 'Coconut Dream',
-      description: 'Fresh coconut with pineapple chunks',
-      price: '₹55',
-      hidden: true
+      _id: 9,
+      galleryImage: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop&crop=center",
+      title: "Sweet Potato Fries"
     },
     {
-      id: 9,
-      category: 'snack',
-      emoji: '🥪',
-      title: 'Rainbow Sandwich',
-      description: 'Multi-colored veggie sandwich with herbs',
-      price: '₹35',
-      hidden: true
+      _id: 10,
+      galleryImage: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop&crop=center",
+      title: "Colorful Wrap"
     },
     {
-      id: 10,
-      category: 'snack',
-      emoji: '🍟',
-      title: 'Sweet Potato Fries',
-      description: 'Golden fries with special seasoning',
-      price: '₹30',
-      hidden: true
+      _id: 11,
+      galleryImage: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&crop=center",
+      title: "Fresh Garden Salad"
     },
     {
-      id: 11,
-      category: 'snack',
-      emoji: '🥙',
-      title: 'Colorful Wrap',
-      description: 'Fresh vegetables in spinach tortilla',
-      price: '₹45',
-      hidden: true
+      _id: 12,
+      galleryImage: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop&crop=center",
+      title: "Rainbow Combo"
     },
     {
-      id: 12,
-      category: 'snack',
-      emoji: '🥗',
-      title: 'Fresh Garden Salad',
-      description: 'Mixed greens with rainbow vegetables',
-      price: '₹40',
-      hidden: true
+      _id: 8,
+      galleryImage: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=300&fit=crop&crop=center",
+      title: "Rainbow Sandwich"
     },
     {
-      id: 13,
-      category: 'special',
-      emoji: '🌈',
-      title: 'Rainbow Combo',
-      description: 'Any juice + any snack at special price',
-      price: '₹85',
-      hidden: true
+      _id: 9,
+      galleryImage: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop&crop=center",
+      title: "Sweet Potato Fries"
     },
     {
-      id: 14,
-      category: 'special',
-      emoji: '⭐',
-      title: 'Health Special',
-      description: 'Green smoothie with energy bar combo',
-      price: '₹75',
-      hidden: true
+      _id: 10,
+      galleryImage: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop&crop=center",
+      title: "Colorful Wrap"
     },
     {
-      id: 15,
-      category: 'juice',
-      emoji: '🍋',
-      title: 'Lemon Mint Cooler',
-      description: 'Refreshing lemon with fresh mint leaves',
-      price: '₹35',
-      hidden: true
+      _id: 11,
+      galleryImage: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&crop=center",
+      title: "Fresh Garden Salad"
+    },
+    {
+      _id: 12,
+      galleryImage: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop&crop=center",
+      title: "Rainbow Combo"
     }
   ];
 
-
-
-  const handleSeeMore = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-  const visibleData = galleryData.filter(item => {
-    return !item.hidden || isExpanded;
-  });
-
-  const hasHiddenItems = galleryData.some(item => item.hidden);
-
   return (
-    <div className="gallery-container">
-      <div className="gallery-header">
-        <h1 className="gallery-title">Our Colorful Gallery</h1>
-        <p className="gallery-subtitle">
-          Discover our vibrant collection of fresh juices, smoothies, and delicious snacks
-        </p>
-      </div>
-
-
-
-      <div className="gallery-grid">
-        {visibleData.map((item, index) => (
-          <div
-            key={item.id}
-            className={`gallery-item ${item.category} ${item.hidden && !isExpanded ? 'hidden-row' : ''}`}
-          >
-            <div className="item-image">{item.emoji}</div>
+    <section id="photos">
+      <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
+        <BlurFade direction="up" offset={24}>
+          <h2 className="text-xs font-bold text-amber-600 tracking-[0.2em] uppercase mb-4 font-serif">CRAFTED VISIONS</h2>
+          <h1 className="text-3xl md:text-5xl font-light text-gray-800 mb-4 font-serif leading-tight">Our Gallery</h1>
+          <div className="flex justify-center mb-2">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-px bg-amber-300"></div>
+              <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
+              <div className="w-8 h-px bg-amber-300"></div>
+            </div>
           </div>
+        </BlurFade>
+      </div>
+      
+      <div className="columns-2 gap-4 sm:columns-3">
+        {images.map((img, idx) => (
+          <BlurFade key={img._id || img.image || idx} delay={0.25 + idx * 0.05} inView>
+            <div className="mb-4 group relative overflow-hidden rounded-lg cursor-pointer">
+              {/* Image */}
+              <img
+                className="w-full h-full object-cover transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-110"
+                src={img.galleryImage}
+                alt={img.title || `Gallery image ${idx + 1}`}
+              />
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out"></div>
+              {/* Golden Border Effect */}
+              <div 
+                className="absolute inset-0 border-2 opacity-0 group-hover:opacity-80 transition-all duration-300 ease-out rounded-lg"
+                style={{ borderColor: '#e3b873' }}
+              ></div>
+              {/* Subtle Glow Effect */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-all duration-500 ease-out rounded-lg blur-sm"
+                style={{ 
+                  background: 'radial-gradient(circle at center, #e3b873 0%, transparent 70%)',
+                  transform: 'scale(1.1)'
+                }}
+              ></div>
+              {/* Corner Accents */}
+              <div className="absolute top-2 right-2 w-4 h-4 opacity-0 group-hover:opacity-60 transition-all duration-300 delay-100">
+                <div 
+                  className="absolute top-0 right-0 w-full h-0.5 transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  style={{ background: '#e3b873' }}
+                ></div>
+                <div 
+                  className="absolute top-0 right-0 h-full w-0.5 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300 delay-75"
+                  style={{ background: '#e3b873' }}
+                ></div>
+              </div>
+              <div className="absolute bottom-2 left-2 w-4 h-4 opacity-0 group-hover:opacity-60 transition-all duration-300 delay-150">
+                <div 
+                  className="absolute bottom-0 left-0 w-full h-0.5 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  style={{ background: '#e3b873' }}
+                ></div>
+                <div 
+                  className="absolute bottom-0 left-0 h-full w-0.5 transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 delay-75"
+                  style={{ background: '#e3b873' }}
+                ></div>
+              </div>
+            </div>
+          </BlurFade>
         ))}
       </div>
+    </section>
+  )
+}
 
-      {hasHiddenItems && (
-        <div className="see-more-container">
-          <button className="see-more-btn" onClick={handleSeeMore}>
-            {isExpanded ? '📦 Show Less' : '🌟 See More Items'}
-          </button>
-        </div>
-      )}
-
-
-    </div>
-  );
-};
-
-export default Laurels;
-
+export default Laurels
