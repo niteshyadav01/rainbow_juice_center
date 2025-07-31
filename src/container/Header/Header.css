@@ -1,0 +1,345 @@
+/* Force left alignment for hero text */
+.hero-text-left {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.hero-text-left h1,
+.hero-text-left p,
+.hero-text-left div {
+  text-align: left !important;
+}
+
+.hero-content-container {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+}
+
+.hero-left-content {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Force slide 2 layout changes */
+.grid[class*="gap-12"] {
+  gap: 3rem !important;
+}
+
+@media (min-width: 1024px) {
+  .grid[class*="gap-24"] {
+    gap: 6rem !important;
+  }
+}
+
+/* Force order changes for slide 2 */
+.grid > div:first-child {
+  order: 1 !important;
+}
+
+.grid > div:last-child {
+  order: 2 !important;
+}
+
+/* Comprehensive responsive layout for hero section */
+@media (max-width: 1023px) {
+  /* Mobile and Tablet - Images first, text second */
+  .grid > div:first-child {
+    order: 1 !important;
+  }
+  
+  .grid > div:last-child {
+    order: 2 !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  /* Force single column layout */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Adjust text sizing for mobile/tablet */
+  .hero-text-left h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-text-left p {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Center text in slides 1 and 2 on small screens */
+  .grid[class*="grid-cols-2"] > div:last-child {
+    text-align: center !important;
+  }
+  
+  .grid[class*="grid-cols-2"] > div:last-child h1,
+  .grid[class*="grid-cols-2"] > div:last-child p {
+    text-align: center !important;
+  }
+  
+  .grid[class*="grid-cols-2"] > div:last-child .inline-flex {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .grid[class*="grid-cols-2"] > div:last-child button {
+    margin: 0 auto !important;
+  }
+  
+  .grid[class*="grid-cols-2"] > div:last-child .grid[class*="grid-cols-2"] {
+    justify-content: center !important;
+  }
+  
+  /* Override hero-text-left on small screens */
+  .hero-text-left {
+    text-align: center !important;
+  }
+  
+  .hero-text-left h1,
+  .hero-text-left p,
+  .hero-text-left div {
+    text-align: center !important;
+  }
+  
+  /* Force center alignment for all text elements */
+  .grid > div:last-child * {
+    text-align: center !important;
+  }
+  
+  .grid > div:last-child .inline-flex {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .grid > div:last-child button {
+    margin: 0 auto !important;
+  }
+  
+  .grid > div:last-child .grid {
+    justify-content: center !important;
+  }
+  
+  /* Force center alignment with new class */
+  .responsive-hero .grid > div:last-child {
+    text-align: center !important;
+  }
+  
+  .responsive-hero .grid > div:last-child * {
+    text-align: center !important;
+  }
+  
+  .responsive-hero .grid > div:last-child .inline-flex {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .responsive-hero .grid > div:last-child button {
+    margin: 0 auto !important;
+  }
+  
+  .responsive-hero .grid > div:last-child .grid {
+    justify-content: center !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop - Text first, images second */
+  .grid > div:first-child {
+    order: 1 !important;
+  }
+  
+  .grid > div:last-child {
+    order: 2 !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Force multi-column layout */
+  .grid[class*="grid-cols-2"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .grid[class*="grid-cols-3"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  /* Restore desktop text sizing */
+  .hero-text-left h1 {
+    font-size: 4rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .hero-text-left p {
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Restore all text sizes on desktop */
+  .grid > div:last-child h1 {
+    font-size: 4rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .grid > div:last-child p {
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .responsive-hero .grid > div:last-child h1 {
+    font-size: 4rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .responsive-hero .grid > div:last-child p {
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Force images to top on small screens */
+@media (max-width: 1023px) {
+  /* Target image containers specifically */
+  .grid > div:has(img) {
+    order: 1 !important;
+  }
+  
+  .grid > div:not(:has(img)) {
+    order: 2 !important;
+  }
+  
+  /* Alternative selectors for broader browser support */
+  .grid > div[class*="relative"] {
+    order: 1 !important;
+  }
+  
+  .grid > div[class*="space-y"] {
+    order: 2 !important;
+  }
+  
+  /* Specific rules for MosaicLayout (slide 3) */
+  .grid[class*="grid-cols-3"] > div:first-child {
+    order: 2 !important; /* Text content */
+  }
+  
+  .grid[class*="grid-cols-3"] > div:last-child {
+    order: 1 !important; /* Image mosaic */
+  }
+  
+  /* Force single column for mosaic on small screens */
+  .grid[class*="grid-cols-3"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Add spacing for slide 3 on small screens */
+  .grid[class*="grid-cols-3"] > div:first-child {
+    margin-bottom: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .grid[class*="grid-cols-3"] > div:last-child {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+  }
+  
+  /* Force spacing with more specific selectors */
+  .grid[class*="grid-cols-3"] > div[class*="order-2"] {
+    margin-bottom: 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .grid[class*="grid-cols-3"] > div[class*="order-1"] {
+    margin-top: 2rem !important;
+    padding-top: 1rem !important;
+  }
+  
+  /* Target the specific slide 3 layout */
+  .grid[class*="grid-cols-3"] > div:has(h1) {
+    margin-bottom: 3rem !important;
+  }
+  
+  .grid[class*="grid-cols-3"] > div:has(img) {
+    margin-top: 2rem !important;
+  }
+  
+  /* Center the PREMIUM WELLNESS button in slide 3 on small screens */
+  .grid[class*="grid-cols-3"] .inline-flex {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .grid[class*="grid-cols-3"] .inline-flex[class*="px-4"] {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Target the specific button with Star icon */
+  .grid[class*="grid-cols-3"] .inline-flex:has(svg) {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Center the PREMIUM WELLNESS button specifically */
+  .premium-wellness-btn {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Force center alignment for the button container */
+  .grid[class*="grid-cols-3"] > div:first-child {
+    text-align: center !important;
+  }
+  
+  .grid[class*="grid-cols-3"] > div:first-child .premium-wellness-btn {
+    display: inline-flex !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Restore stats cards styling */
+  .grid[class*="grid-cols-2"] .grid[class*="grid-cols-2"] {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .grid[class*="grid-cols-2"] .grid[class*="grid-cols-2"] > div {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(4px) !important;
+    border-radius: 0.75rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    padding: 0.75rem !important;
+    text-align: center !important;
+  }
+  
+  .grid[class*="grid-cols-2"] .grid[class*="grid-cols-2"] > div > div:first-child {
+    font-size: 1.25rem !important;
+    font-weight: bold !important;
+    line-height: 1.2 !important;
+  }
+  
+  .grid[class*="grid-cols-2"] .grid[class*="grid-cols-2"] > div > div:last-child {
+    font-size: 0.75rem !important;
+    color: #6b7280 !important;
+  }
+  
+  /* Hide third image in slide 3 on small screens */
+  .grid[class*="grid-cols-3"] .grid[class*="grid-cols-2"] > div:last-child {
+    display: none !important;
+  }
+  
+  /* Adjust mosaic grid to single column on small screens */
+  .grid[class*="grid-cols-3"] .grid[class*="grid-cols-2"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Make the large image take full height on small screens */
+  .grid[class*="grid-cols-3"] .grid[class*="grid-cols-2"] > div:first-child {
+    grid-row: span 1 !important;
+  }
+} 

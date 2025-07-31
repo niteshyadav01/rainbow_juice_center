@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-base: 'Cormorant Upright', serif;
+  --font-alt: 'Open Sans', sans-serif;
+  
+  --color-golden: orange;
+  --color-black: #0C0C0C;
+  --color-gray: #545454;
+  --color-crimson: #F5EFDB;
+  --color-grey: #AAAAAA;
+  --color-white: #FFFFFF;
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* Button 5 specific styles */
+.custom-btn.btn-5 {
+  width: 150px !important;
+  height: 40px !important;
+  padding: 0 20px !important;
+  border: none !important;
+  background: rgb(255,27,0) !important;
+  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%) !important;
+}
+
+ .custom-btn.btn-5:hover {
+  color:  rgb(255,27,0) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.custom-btn.btn-5:before,
+ .custom-btn.btn-5:after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  width: 0 !important;
+  background:  rgb(255,27,0) !important;
+  box-shadow: -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002 !important;
+  transition: 400ms ease all !important;
+}
+
+ .custom-btn.btn-5:after {
+  right: inherit !important;
+  top: inherit !important;
+  left: 0 !important;
+  bottom: 0 !important;
+}
+
+ .custom-btn.btn-5:hover:before,
+ .custom-btn.btn-5:hover:after {
+  width: 100% !important;
+  transition: 800ms ease all !important;
+}
+
+/* Icon and text spacing within button */
+ .custom-btn svg {
+  margin-right: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+ .custom-btn span {
+  white-space: nowrap !important;
+}
+

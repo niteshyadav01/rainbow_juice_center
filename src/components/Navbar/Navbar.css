@@ -1,0 +1,50 @@
+body {
+  background: #e0e5ec;
+}
+h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  color: #676767;
+}
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+
+/* Custom Button Styles - High specificity to override Tailwind */
+  .custom-btn {
+  width: 150px !important;
+  height: 40px !important;
+  color: #fff !important;
+  border-radius: 5px !important;
+  padding: 0 20px !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 500 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1) !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
