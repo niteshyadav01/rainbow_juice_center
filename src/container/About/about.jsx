@@ -9,7 +9,7 @@ import pasta from "../../assets/pasta.jpg";
 import pavBhaji from "../../assets/pavbhaji.jpg";
 import pizza from "../../assets/pavbhaji.jpg";
 import sandwich from "../../assets/sandwich.jpg";
-import shakes from "../../assets/shakes.png";
+import shakes from "../../assets/shake.jpeg";
 import starters from "../../assets/starter.jpg";
 
 export default function AboutSection() {

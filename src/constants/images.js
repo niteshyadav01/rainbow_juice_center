@@ -5,7 +5,7 @@ import gallery_03 from '../assets/gallery_03.JPG';
 import gallery_04 from '../assets/gallery-04.JPG';
 import overlaybg from '../assets/overlaybg.png';
 import spoon from '../assets/spoon.svg';
-import welcome from '../assets/welcome.png';
+import welcome from '../assets/welcome.jpeg';
 import award01 from '../assets/award01.png';
 import award02 from '../assets/award02.png';
 import award03 from '../assets/award03.png';
@@ -32,7 +32,7 @@ import pasta from "../assets/pasta.jpg"
 import pavBhaji from "../assets/pavbhaji.jpg"
 import pizza from "../assets/pavbhaji.jpg"
 import sandwich from "../assets/sandwich.jpg"
-import shakes from "../assets/shakes.png"
+import shakes from "../assets/shake.jpeg"
 import starters from "../assets/starter.jpg"
 
 export default {

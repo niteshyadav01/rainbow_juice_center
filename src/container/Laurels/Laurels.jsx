@@ -10,7 +10,7 @@ import pasta from "../../assets/pasta.jpg";
 import pavBhaji from "../../assets/pavbhaji.jpg";
 import pizza from "../../assets/pizza.jpg";
 import sandwich from "../../assets/sandwich.jpg";
-import shakes from "../../assets/shakes.png";
+import shakes from "../../assets/shake.jpeg";
 import starters from "../../assets/starter.jpg";
 import gallery_01 from "../../assets/gallery_01.JPG";
 import gallery_02 from "../../assets/gallery_02.JPG";

@@ -18,6 +18,7 @@ import { MarqueeDemo } from './container/Testimonial';
 import Cta from './container/Cta';
 import Stores from './container/store/Store';
 import Contact from './pages/Contact';
+import About_page from './pages/About_page';
 
 const Home = () => (
   <>
@@ -29,6 +30,7 @@ const Home = () => (
     <Gallery />
     <Stores/>
     <Cta/>
+    {/* <Contact/> */}
   </>
 );
 
@@ -60,12 +62,12 @@ const App = () => {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<><about /></>} />
-        <Route path="/about" element={<><AboutPage /> </>} />
+        <Route path="/" element={<Home />} /> 
         <Route path="/menu" element={<><MenuPage /> </>} />
         <Route path="/gallery" element={<><GalleryPage /> </>} />
         <Route path="/contact" element={<><Contact /></>} />
+        <Route path="/about" element={<About_page  />} />
+
       </Routes>
       <Footer/>
     </Router>
