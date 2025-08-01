@@ -1,91 +1,93 @@
+import { BlurFade } from "../components/UIComponent/blur-fade.tsx";
 import { Marquee } from "../components/magicui/marquee"
 import { cn } from "../lib/utils";
+import { motion } from "framer-motion";
 
 const reviews = [
   {
-    name: "Priya Sharma",
-    username: "@priya_s",
-    body: "The Rainbow Special Uttapam is absolutely divine! Fresh ingredients and perfect taste. Their mango cream bowls are heavenly too!",
-    img: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    name: "Meghana Pawar",
+    body: "They have amazing fast food dishes. Sandwiches and pav bhaji are my favourite. I have tried their juices too and they are great! Do try it if you are around the area. I have been going here since childhood. Highly recommend it!",
     rating: 5,
+    img: "",
+    username: "@meghana"
   },
   {
-    name: "Rahul Patel",
-    username: "@rahul_p",
-    body: "Best sandwiches in town! The Veg Cheese Grill Sandwich is my go-to. Fresh bread and generous cheese filling. Highly recommended!",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    name: "Shaikh Firoz",
+    body: "Best place to have quick bites and juices.",
     rating: 5,
+    img: "",
+    username: "@firoz"
+  },
+  {
+    name: "Shubham Patil",
+    body: "Rainbow is one of the best food stalls in Marol. I have been eating here since my childhood. Must try dishes: Veg cheese grill sandwich, masala pav, pizza sandwich, uttapam, juices. 10/10!",
+    rating: 5,
+    img: "",
+    username: "@shubham"
+  },
+  {
+    name: "Ashwin Shetty",
+    body: "Great place for Juices and fast food! Do try the special Pav Bhaji and Uttapams. Very pocket-friendly place and the owner and staff are really good people! Highly recommended!",
+    rating: 5,
+    img: "",
+    username: "@ashwin"
   },
   {
     name: "Anjali Desai",
-    username: "@anjali_d",
-    body: "Love their Frankie rolls! The Veg Schezwan Frankie is spicy and delicious. Perfect for a quick snack. Staff is very friendly!",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-  },
-  {
-    name: "Vikram Singh",
-    username: "@vikram_s",
-    body: "Their Rainbow Special Pizza is amazing! Fresh toppings and perfect cheese. The Peri Peri Fries are crispy and flavorful too.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    body: "Absolutely love the variety of juices here. Very hygienic and affordable. A perfect spot for evening snacks.",
     rating: 4,
+    img: "",
+    username: "@anjali"
   },
   {
-    name: "Meera Iyer",
-    username: "@meera_i",
-    body: "The Mango Cream Bowl is to die for! So fresh and creamy. Their Pav Bhaji is also authentic and delicious. Best juice center!",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+    name: "Ritesh Mhatre",
+    body: "One of the best juice centers in the area. Their rainbow sandwich is a must-try. Super quick service too!",
     rating: 5,
+    img: "",
+    username: "@ritesh"
   },
   {
-    name: "Arjun Reddy",
-    username: "@arjun_r",
-    body: "Amazing variety of shakes and cream bowls! The Sitaphal Cream Bowl is my favorite. Fresh ingredients and great taste!",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-  },
-  {
-    name: "Kavya Nair",
-    username: "@kavya_n",
-    body: "Their Cheese Melting French Fries are the best! Crispy outside, cheesy inside. The Masala Dosa is also perfectly made.",
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-  },
-  {
-    name: "Aditya Kumar",
-    username: "@aditya_k",
-    body: "Love their Paneer Chilly Dry starter! Perfectly spiced and crispy. The Cheese Pasta is also creamy and delicious.",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+    name: "Nikita Jain",
+    body: "I always stop by after college. Love their pineapple juice and grilled sandwiches. Clean and tasty.",
     rating: 4,
+    img: "",
+    username: "@nikita"
   },
   {
-    name: "Zara Khan",
-    username: "@zara_k",
-    body: "The Strawberry Shake with Cream is heavenly! So smooth and refreshing. Their Momos are also perfectly steamed and juicy.",
-    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face",
+    name: "Raj Verma",
+    body: "Highly underrated spot. The quality and pricing is unbeatable. Feels like a hidden gem in Marol.",
     rating: 5,
+    img: "",
+    username: "@rajv"
   },
   {
-    name: "Rohan Mehta",
-    username: "@rohan_m",
-    body: "Best juice center in the area! Their Cheese Pav Bhaji is rich and flavorful. The service is quick and staff is polite.",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+    name: "Fatima Sheikh",
+    body: "The cheese dosa and cold coffee combo is fire! Quick service and super friendly uncle at the counter.",
     rating: 5,
+    img: "",
+    username: "@fatima"
   },
   {
-    name: "Sneha Verma",
-    username: "@sneha_v",
-    body: "The Masala Maggi is perfectly cooked! Not too soft, not too hard. Their Cheese Toast Sandwich is also very tasty.",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    name: "Neeraj Joshi",
+    body: "A wholesome snack corner. From juices to South Indian food, everything is fresh and tasty.",
     rating: 5,
+    img: "",
+    username: "@neeraj"
   },
   {
-    name: "Karan Malhotra",
-    username: "@karan_m",
-    body: "Amazing variety of sandwiches and rolls! The Footlong Mexican Delight is huge and delicious. Great value for money!",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
+    name: "Divya K.",
+    body: "Perfect place for an affordable yet fulfilling meal. I go there almost every weekend. Consistently good.",
+    rating: 4,
+    img: "",
+    username: "@divyak"
   },
+  {
+    name: "Karan Thakkar",
+    body: "Rainbow Juice Center is the heart of Marol! Brings back so many childhood memories. Still the same great taste!",
+    rating: 5,
+    img: "",
+    username: "@karan"
+  }
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
@@ -97,9 +99,8 @@ const StarRating = ({ rating }) => {
       {[...Array(5)].map((_, index) => (
         <svg
           key={index}
-          className={`w-4 h-4 ${
-            index < rating ? "text-yellow-400" : "text-gray-300"
-          }`}
+          className={`w-4 h-4 ${index < rating ? "text-yellow-400" : "text-gray-300"
+            }`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -111,59 +112,79 @@ const StarRating = ({ rating }) => {
 };
 
 const ReviewCard = ({ img, name, username, body, rating }) => {
+  const getInitials = (name) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
+  };
+
   return (
-    <figure
+    <motion.figure
+      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className={cn(
         "relative h-full w-80 cursor-pointer overflow-hidden rounded-2xl border p-6 mx-4",
         "backdrop-blur-md bg-white/20 border-white/30 shadow-xl",
         "hover:bg-white/30 hover:border-white/50 transition-all duration-300",
-        "transform hover:scale-105 hover:shadow-2xl",
+        "transform hover:scale-105 hover:shadow-2xl"
       )}
     >
-      {/* Glass effect overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl" />
-      
+
       <div className="relative z-10">
         <div className="flex items-start gap-4 mb-4">
-          <div className="relative">
-            <img 
-              className="rounded-full w-12 h-12 object-cover ring-2 ring-white/30" 
-              alt={name} 
-              src={img} 
-            />
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
+          <div className="relative w-12 h-12">
+            {img ? (
+              <img
+                className="rounded-full w-12 h-12 object-cover ring-2 ring-white/30"
+                alt={name}
+                src={img}
+                onError={(e) => (e.target.style.display = "none")}
+              />
+            ) : (
+              <div className="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center ring-2 ring-white/30 text-gray-700 font-bold text-sm">
+                {getInitials(name)}
+              </div>
+            )}
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white" />
           </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between mb-1">
-              <figcaption className="text-sm font-semibold text-gray-800">
-                {name}
-              </figcaption>
+
+          <div className="mb-1">
+            <figcaption className="text-sm font-semibold text-gray-800">
+              {name}
+            </figcaption>
+            <div className="mt-1">
               <StarRating rating={rating} />
             </div>
-            {/* <p className="text-xs text-gray-600 mb-2">{username}</p> */}
           </div>
+
         </div>
-        
+
         <blockquote className="text-sm text-gray-700 leading-relaxed">
           "{body}"
         </blockquote>
-        
-        {/* Decorative quote mark */}
+
         <div className="absolute top-4 right-4 text-4xl text-white/20 font-serif">
           "
         </div>
       </div>
-    </figure>
+    </motion.figure>
   );
 };
 
+
 export function MarqueeDemo() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-16">
+    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden mx-auto px-4 py-16 lg:py-24">
       {/* Glass effect background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-yellow-100 to-red-100" />
       <div className="absolute inset-0 backdrop-blur-sm bg-white/30" />
-      
+
       <div className="relative z-10 w-full">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-semibold text-gray-800 font-serif mb-2 gallery-title">
@@ -177,22 +198,25 @@ export function MarqueeDemo() {
             <div className="border-t border-gray-400 w-24" />
           </div>
         </div>
-        
-        <Marquee pauseOnHover className="[--duration:40s] mb-8">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
+        <BlurFade direction="up" offset={24}>
+          <Marquee pauseOnHover className="[--duration:40s] mb-8">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+        </BlurFade>
+        <BlurFade direction="up" offset={24}> 
         <Marquee reverse pauseOnHover className="[--duration:40s]">
           {secondRow.map((review) => (
             <ReviewCard key={review.username} {...review} />
           ))}
         </Marquee>
+        </BlurFade>
       </div>
-      
+
       {/* Gradient fade effects */}
       {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-transparent to-white/50 z-20"></div> */}
       {/* <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-transparent to-white/50 z-20"></div> */}
-    </div>
+    </section>
   );
 }

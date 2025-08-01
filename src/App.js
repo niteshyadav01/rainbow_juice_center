@@ -16,18 +16,19 @@ import AboutPage from './container/AboutPage/AboutPage';
 import Contact from './container/ContactPage/Contact';
 import About from './container/About/about';
 import { MarqueeDemo } from './container/Testimonial';
+import Cta from './container/Cta';
+import Stores from './container/store/Store';
 
 const Home = () => (
   <>
     <Header />
     <About />
-    {/* <BestSellerMenu /> */}
-    {/* <Laurels /> */}
-    <Chef />
+    {/* <Chef /> */}
+    <Laurels />
     <MarqueeDemo />
-    {/* <MenuPage /> */}
-    {/* <Photogallery /> */}
-    {/* <Gallery /> */}
+    <Gallery />
+    <Stores/>
+    <Cta/>
   </>
 );
 

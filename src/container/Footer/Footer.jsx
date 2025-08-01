@@ -2,9 +2,9 @@ import React from 'react';
 import { Instagram, Facebook, Twitter, MapPin, Clock, Phone } from 'lucide-react';
 
 const Footer = () => (
-  <footer className="bg-[#FEE4A4] text-gray-700 font-sans text-center">
+  <footer className="bg-[#e4dcc8] text-gray-700 font-sans text-center">
     {/* Decorative top border */}
-    <div className="h-1 bg-gradient-to-r from-red-500 via-green-500 to-blue-500" />
+    {/* <div className="h-1 bg-gradient-to-r from-red-500 via-green-500 to-blue-500" /> */}
     <div className="max-w-7xl mx-auto py-14 px-4 sm:px-6 lg:px-8 ">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand - First Section */}

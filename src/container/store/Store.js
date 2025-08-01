@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 // import men from "../../../assets/gallery/men/mens.png"
 import chandivali_branch from '../../assets/rainbow_shop_img.jpg';
 import powai_branch from '../../assets/shop_img2.jpg';
+import { BlurFade } from '../../components/UIComponent/blur-fade.tsx';
 const storeDetails = {
   colaba: {
     name: "Chandivali",
@@ -107,28 +108,29 @@ const Stores = () => {
       </div>
 
       {/* Store Details */}
-      <motion.div
+      <div
         className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-6"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+
       >
-        {/* Left Card – Image + Info */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-yellow-100">
-          <img src={store.image} alt={store.name} className="h-64 w-full object-cover object-center" />
-          <div className="p-6">
-            <h4 className="text-2xl font-bold text-gray-900 mb-2 text-center">{store.name}</h4>
-            <p className="text-yellow-700 font-medium italic mb-3">{store.vibe}</p>
-            <p className="text-gray-600 mb-4">{store.description}</p>
+        <BlurFade
+          direction="up"
+          offset={24}
+          delay={0.55}>
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-yellow-100">
+            <img src={store.image} alt={store.name} className="h-64 w-full object-cover object-center" />
+            <div className="p-6">
+              <h4 className="text-2xl font-bold text-gray-900 mb-2 text-center">{store.name}</h4>
+              <p className="text-yellow-700 font-medium italic mb-3">{store.vibe}</p>
+              <p className="text-gray-600 mb-4">{store.description}</p>
 
-            <div className="flex items-center space-x-3 mb-2">
-              <MapPin className="w-5 h-5 text-yellow-600" />
-              <span className="text-gray-700">{store.address}</span>
+              <div className="flex items-center space-x-3 mb-2">
+                <MapPin className="w-5 h-5 text-yellow-600" />
+                <span className="text-gray-700">{store.address}</span>
+              </div>
+
             </div>
-
           </div>
-        </div>
-
+        </BlurFade>
         {/* Right Card – Map */}
         <div className="bg-white rounded-2xl shadow-xl border border-yellow-100 overflow-hidden">
 
@@ -144,7 +146,7 @@ const Stores = () => {
             <Map className="w-5 h-5" /> Location on Google Maps
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
