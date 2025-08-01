@@ -15,6 +15,8 @@ import starters from "../../assets/starter.jpg";
 export default function AboutSection() {
   return (
     <section className="bg-[white] py-16 px-4 md:px-20">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500"></div>
+
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-start justify-center">
         {/* Left Side (Text) */}
         <div className="text-center md:text-left">

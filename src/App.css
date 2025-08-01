@@ -247,8 +247,8 @@ html.lenis {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -256,7 +256,7 @@ html.lenis {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #DB790A;  
+  background: linear-gradient(45deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #6366f1, #a855f7) !important;
   border-radius: 9999px;
   border: 2px solid transparent;
   background-clip: content-box;
@@ -265,3 +265,4 @@ html.lenis {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #b25f08;
 }
+/* bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500  */

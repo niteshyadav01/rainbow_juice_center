@@ -13,11 +13,11 @@ import BestSellerMenu from './container/Menu/Menu';
 import MenuPage from './container/MenuPage/Menu';
 import GalleryPage from './container/GalleryPage/GalleryPage';
 import AboutPage from './container/AboutPage/AboutPage';
-import Contact from './container/ContactPage/Contact';
 import About from './container/About/about';
 import { MarqueeDemo } from './container/Testimonial';
 import Cta from './container/Cta';
 import Stores from './container/store/Store';
+import Contact from './pages/Contact';
 
 const Home = () => (
   <>
@@ -33,28 +33,28 @@ const Home = () => (
 );
 
 const App = () => {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smooth: true,
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smoothTouch: true,
-      touchMultiplier: 2,
-      wheelMultiplier: 1,
-      lerp: 0.1,
-    });
+  // useEffect(() => {
+  //   const lenis = new Lenis({
+  //     duration: 1.2,
+  //     smooth: true,
+  //     direction: 'vertical',
+  //     gestureDirection: 'vertical',
+  //     smoothTouch: true,
+  //     touchMultiplier: 2,
+  //     wheelMultiplier: 1,
+  //     lerp: 0.1,
+  //   });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   requestAnimationFrame(raf);
 
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
 
   return (
     <Router>

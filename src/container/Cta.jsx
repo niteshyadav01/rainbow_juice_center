@@ -51,20 +51,17 @@ const Cta = () => {
           </p>
           
           {/* Feature indicators with staggered animation */}
-          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base text-gray-800 transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`flex items-center gap-2 sm:gap-3 transition-all duration-500 delay-1400 hover:scale-110 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-              <div className="w-3 sm:w-4 h-3 sm:h-4 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="hover:text-green-600 transition-colors duration-300 font-medium">Market Fresh</span>
+          
+          <div className="flex justify-center items-center h-full mt-6">
+              <a
+                href="/contact"
+                // onClick={() => setToggleMenu(false)}
+                className="custom-btn btn-5"
+              >
+                {/* <Play className="w-4 h-4 mr-2" /> */}
+                <span>Contact Us</span>
+              </a>
             </div>
-            <div className={`flex items-center gap-2 sm:gap-3 transition-all duration-500 delay-1600 hover:scale-110 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="w-3 sm:w-4 h-3 sm:h-4 bg-orange-500 rounded-full animate-pulse"></div>
-              <span className="hover:text-orange-600 transition-colors duration-300 font-medium">Premium Quality</span>
-            </div>
-            <div className={`flex items-center gap-2 sm:gap-3 transition-all duration-500 delay-1800 hover:scale-110 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-              <div className="w-3 sm:w-4 h-3 sm:h-4 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="hover:text-blue-600 transition-colors duration-300 font-medium">Daily Prepared</span>
-            </div>
-          </div>
         </div>
       </div>
 
