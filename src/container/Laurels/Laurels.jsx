@@ -78,11 +78,11 @@ const Laurels = () => {
                   className="flex flex-1 flex-col  hover:shine"
                 >
                   {/* img_02 */}
-                  <img
-                    className="object-cover h-full"
-                    src={about}
-                    alt="Tropical Smoothie"
-                  />
+                    <img
+                      className="object-cover h-full"
+                      src={about}
+                      alt="Tropical Smoothie"
+                    />
                 </BlurFade>
                 <BlurFade
                   inView

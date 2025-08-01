@@ -64,6 +64,7 @@ const Contact = () => {
                     </motion.p>
                 </motion.div>
             </section>
+            
             <Stores />
 
 
