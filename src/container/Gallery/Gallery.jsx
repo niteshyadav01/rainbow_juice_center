@@ -65,10 +65,10 @@ const Gallery = () => {
             href="https://www.instagram.com/rainbow_juice_centre/"
             target="_blank"
             rel="noopener noreferrer"
-            className={`group relative overflow-hidden bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 delay-800 ${isVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-lg'}`}
+            className= "custom-btn btn-5"
           >
             <span className="relative z-10 flex items-center gap-2">
-              <BsInstagram className="text-xl" />
+              {/* <BsInstagram className="text-xl" /> */}
               Visit Instagram
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

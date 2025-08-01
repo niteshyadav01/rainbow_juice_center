@@ -5,23 +5,15 @@ import { Navbar } from './components';
 import './App.css';
 import Header from './container/Header/Header';
 import Footer from './container/Footer/Footer';
-import Chef from './container/Chef/Chef';
 import Laurels from './container/Laurels/Laurels';
-// import Gallery from './container/Gallery/Gallery';
-import Photogallery from './container/PhotoGallery/Photogallery';
-import BestSellerMenu from './container/Menu/Menu';
-import MenuPage from './container/MenuPage/Menu';
-import GalleryPage from './container/GalleryPage/GalleryPage';
-import AboutPage from './container/AboutPage/AboutPage';
 import About from './container/About/about';
 import { MarqueeDemo } from './container/Testimonial';
 import Cta from './container/Cta';
 import Stores from './container/store/Store';
 import Contact from './pages/Contact';
 import About_page from './pages/About_page';
-import Gallery from './pages/Gallery_page';
 import Gallery_page from './pages/Gallery_page';
-
+import Menu from './pages/Menu';
 
 const Home = () => (
   <>
@@ -65,9 +57,8 @@ const App = () => {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Home />} /> 
-        <Route path="/menu" element={<><MenuPage /> </>} />
-        {/* <Route path="/gallery" element={<><GalleryPage /> </>} /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="/contact" element={<><Contact /></>} />
         <Route path="/about" element={<About_page  />} />
         <Route path="/gallery" element={<Gallery_page />} />

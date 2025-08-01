@@ -107,7 +107,7 @@ const Navbar = () => {
                     src={logo}
                     alt="Rainbow Restaurant"
                     className={`object-cover rounded-full border-4 border-white shadow-lg transition-all duration-500 ${
-                      isScrolled ? "h-12 w-12" : "h-24 w-24"
+                      isScrolled ? "h-12 w-12" : "h-20 w-20 md:h-24 md:w-24"
                     }`}
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 via-orange-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
