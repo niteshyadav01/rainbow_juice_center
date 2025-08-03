@@ -24,7 +24,7 @@ import about from "../../assets/about.JPG";
 const Laurels = () => {
   return (
     <>
-      <section className="mx-auto px-4 py-16 lg:py-24 relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
+      <section className="mx-auto px-4 py-16 lg:py-24 relative bg-white">
         <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
           <BlurFade direction="up" offset={24}>
             <div className="text-center mb-12">

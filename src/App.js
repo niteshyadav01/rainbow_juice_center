@@ -14,11 +14,13 @@ import Contact from './pages/Contact';
 import About_page from './pages/About_page';
 import Gallery_page from './pages/Gallery_page';
 import Menu from './pages/Menu';
+import  MenuSection  from './container/MenuSection/MenuSection';  
 
 const Home = () => (
   <>
     <Header />
     <About />
+    <MenuSection />
     {/* <Chef /> */}
     <Laurels />
     <MarqueeDemo />
@@ -62,6 +64,7 @@ const App = () => {
         <Route path="/contact" element={<><Contact /></>} />
         <Route path="/about" element={<About_page  />} />
         <Route path="/gallery" element={<Gallery_page />} />
+        <Route path="/menu" element={<exploreMenu />} />
 
 
       </Routes>
