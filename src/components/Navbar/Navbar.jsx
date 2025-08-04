@@ -40,11 +40,10 @@ const Navbar = () => {
     <>
       {/* Infinity Scrolling Header - Rainbow Colors */}
       <div
-        className={`bg-amber-50 py-2.5 overflow-hidden relative shadow-sm transition-all duration-300 ${
-          isScrolled
+        className={`bg-amber-50 py-2.5 overflow-hidden relative shadow-sm transition-all duration-300 ${isScrolled
             ? "-translate-y-full opacity-0"
             : "translate-y-0 opacity-100"
-        }`}
+          }`}
       >
         <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500"></div>
 
@@ -82,17 +81,15 @@ const Navbar = () => {
 
       {/* Main Navbar - Fixed positioning with smooth transition */}
       <div
-        className={`${
-          isScrolled ? "top-0 h-20" : "top-10 h-28"
-        } transition-all duration-500`}
+        className={`${isScrolled ? "top-0 h-20" : "top-10 h-28"
+          } transition-all duration-500`}
       ></div>
 
       <nav
-        className={`fixed  w-full z-50 transition-all duration-500 ${
-          isScrolled
+        className={`fixed  w-full z-50 transition-all duration-500 ${isScrolled
             ? "bg-white/95 top-0 backdrop-blur-lg shadow-xl py-2"
             : "bg-white/90 top-10 backdrop-blur-md shadow-lg py-4"
-        }`}
+          }`}
       >
         {/* Rainbow accent border */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500"></div>
@@ -106,9 +103,8 @@ const Navbar = () => {
                   <img
                     src={logo}
                     alt="Rainbow Restaurant"
-                    className={`object-cover rounded-full border-4 border-white shadow-lg transition-all duration-500 ${
-                      isScrolled ? "h-12 w-12" : "h-20 w-20 md:h-24 md:w-24"
-                    }`}
+                    className={`object-cover rounded-full border-4 border-white shadow-lg transition-all duration-500 ${isScrolled ? "h-12 w-12" : "h-20 w-20 md:h-24 md:w-24"
+                      }`}
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 via-orange-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -122,8 +118,8 @@ const Navbar = () => {
                   {item === "" ? (
                     <div
                       className="relative"
-                      // onMouseEnter={() => setDropdownOpen(true)}
-                      // onMouseLeave={() => setDropdownOpen(false)}
+                    // onMouseEnter={() => setDropdownOpen(true)}
+                    // onMouseLeave={() => setDropdownOpen(false)}
                     >
                       <button className="flex items-center px-4 py-2 text-gray-700 font-medium transition-all duration-300 hover:text-orange-600 group">
                         {item}
@@ -219,16 +215,17 @@ const Navbar = () => {
                 ))}
 
                 {/* Mobile CTA */}
-                <div className="pt-6 mt-6 border-t border-gray-200">
+                 <div className="flex justify-center items-center mt-8 pt-6 mt-6">
                   <a
-                    href="/order"
-                    onClick={() => setToggleMenu(false)}
-                    className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-4 rounded-xl font-semibold shadow-lg flex items-center justify-center space-x-2 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    href="/menu"
+                    // onClick={() => setToggleMenu(false)}
+                    className="custom-btn btn-5"
                   >
-                    <Play className="w-5 h-5" />
+                    <Play className="w-4 h-4 mr-2" />
                     <span>Order Now</span>
                   </a>
                 </div>
+               
               </div>
 
               {/* Mobile Menu Footer */}

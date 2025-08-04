@@ -8,9 +8,9 @@ import { Clock } from 'lucide-react';
 
 const Contact = () => {
     const hours = [
-        { day: "Mon – Fri", time: "10:30 AM – 11:00 PM" },
+        { day: "Mon – Fri", time: "10:30 AM – 12:00 AM" },
         { day: "Saturday", time: "10:30 AM – 12:00 AM" },
-        { day: "Sunday", time: "10:30 AM – 11:00 PM" },
+        { day: "Sunday", time: "Open 24 hours" },
     ];
     return (
 
