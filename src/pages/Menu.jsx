@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { ShoppingBag, Plus, Minus, Send, ChefHat, Star, Package, Utensils } from "lucide-react";
 
+
 // Optimized menu data structure
 const menuData = {
   "Sandwiches": {

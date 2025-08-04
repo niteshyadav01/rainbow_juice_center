@@ -55,17 +55,10 @@ const Stores = () => {
   };
   return (
     <section id="contact" className="md:py-10 py-4 bg-gradient-to-b from-white via-amber-50 to-white">
-      <motion.div
-
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerMotion}
+        <BlurFade inView delay={0.25} offset={24}
       >
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           {/* Badge */}
-
-
           {/* Heading */}
           <motion.h2
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-6"
@@ -87,7 +80,7 @@ const Stores = () => {
           {/* Subtext */}
 
         </div>
-      </motion.div>
+      </BlurFade>
 
 
       {/* Toggle Buttons */}

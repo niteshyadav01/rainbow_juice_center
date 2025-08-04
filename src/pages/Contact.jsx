@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import Bgimg from '../assets/rainbow_shop_img.jpg';
+import Bgimg from '../assets/about_banner.jpg';
 import Stores from '../container/store/Store';
 import { Clock } from 'lucide-react';
 

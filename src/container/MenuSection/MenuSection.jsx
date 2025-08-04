@@ -9,38 +9,30 @@ import {
   ChevronRight,
   Sparkles
 } from 'lucide-react';
+import juice from '../../assets/mango.JPG';
+import sandwich from '../../assets/sandwich.jpg';
+import pavbhaji from '../../assets/pavbhaji.jpg';
+import burger from '../../assets/burger.jpg';
+import shakes from '../../assets/shake.jpeg';
+import maggie from '../../assets/maggie.jpg';
+import { BlurFade } from '../../components/UIComponent/blur-fade.tsx';
 
 export default function MenuSection() {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const menuCategories = [
     {
-      id: 'juices',
-      name: 'Juices',
-      icon: <Coffee className="w-8 h-8" />,
+      id: 'maggie',
+      name: 'Maggie',
+      image: maggie,
       bgColor: 'bg-gradient-to-br from-gray-100 to-slate-100',
-    
       iconColor: 'text-orange-600',
       borderColor: 'border-orange-200'
     },
     {
       id: 'shakes',
       name: 'Shakes',
-      icon: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path 
-            d="M8 2H16C16.55 2 17 2.45 17 3S16.55 4 16 4H8C7.45 4 7 3.55 7 3S7.45 2 8 2Z" 
-            fill="currentColor"
-          />
-          <path 
-            d="M6 6H18V20C18 21.1 17.1 22 16 22H8C6.9 22 6 21.1 6 20V6Z" 
-            fill="currentColor"
-          />
-          <circle cx="12" cy="14" r="2" fill="white"/>
-          <circle cx="9" cy="10" r="1" fill="white"/>
-          <circle cx="15" cy="11" r="1" fill="white"/>
-        </svg>
-      ),
+      image: shakes,
       bgColor: 'bg-gradient-to-br from-gray-100 to-slate-100',
       iconColor: 'text-blue-600',
       borderColor: 'border-blue-200'
@@ -48,38 +40,23 @@ export default function MenuSection() {
     {
       id: 'snacks',
       name: 'Snacks',
-      icon: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path 
-            d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" 
-            fill="currentColor"
-          />
-          <path 
-            d="M8 17L8.75 19.25L11 20L8.75 20.75L8 23L7.25 20.75L5 20L7.25 19.25L8 17Z" 
-            fill="currentColor"
-          />
-          <path 
-            d="M18 12L18.5 13.5L20 14L18.5 14.5L18 16L17.5 14.5L16 14L17.5 13.5L18 12Z" 
-            fill="currentColor"
-          />
-        </svg>
-      ),
+      image: sandwich,
       bgColor: 'bg-gradient-to-br from-gray-100 to-slate-100',
       iconColor: 'text-gray-600',
       borderColor: 'border-gray-200'
     },
     {
-      id: 'combos',
-      name: 'Combos',
-      icon: <Package className="w-8 h-8" />,
+      id: 'pav-bhaji',
+      name: 'Pav Bhaji',
+      image: pavbhaji,
       bgColor: 'bg-gradient-to-br from-gray-100 to-slate-100',
       iconColor: 'text-gray-600',
       borderColor: 'border-gray-200'
     },
     {
-      id: 'specials',
-      name: 'Specials',
-      icon: <Star className="w-8 h-8" />,
+      id: 'burger',
+      name: 'Burger',
+      image: burger,
       bgColor: 'bg-gradient-to-br from-gray-100 to-slate-100',
       iconColor: 'text-gray-600',
       borderColor: 'border-gray-200'
@@ -87,7 +64,7 @@ export default function MenuSection() {
     {
       id: 'more',
       name: 'More',
-      icon: <MoreHorizontal className="w-8 h-8" />,
+      image: juice,
       bgColor: 'bg-gradient-to-br from-gray-100 to-slate-100',
       iconColor: 'text-gray-600',
       borderColor: 'border-gray-200'
@@ -96,7 +73,7 @@ export default function MenuSection() {
 
   return (
     <section className="mx-auto px-4 py-16 lg:py-24 relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         
         {/* Header */}
          <div className="text-center mb-12">
@@ -129,13 +106,13 @@ export default function MenuSection() {
         </div>
 
         {/* Menu Categories Grid */}
-        <div className="grid grid-cols-6 md:grid-cols-6 gap-8 mb-12 max-w-30px mx-auto justify-center">
+        <div className="grid grid-cols-6 gap-4 sm:gap-6 md:gap-8 mb-12  mx-auto">
           {menuCategories.map((category, index) => (
-            <div
+            <BlurFade inView delay={0.25 * index} offset={24}
               key={category.id}
               onMouseEnter={() => setHoveredCategory(category.id)}
               onMouseLeave={() => setHoveredCategory(null)}
-              className="group relative cursor-pointer transition-all duration-500 ease-out "
+              className="group relative cursor-pointer transition-all duration-500 ease-out"
             >
               {/* Card */}
               <div className={`
@@ -147,8 +124,8 @@ export default function MenuSection() {
                 border-2 rounded-2xl text-center transition-all duration-500
                 shadow-sm hover:shadow-lg group-hover:border-opacity-80
                 aspect-square flex flex-col items-center justify-center
-                relative overflow-hidden w-full h-24 sm:h-28 md:h-32
-                group-hover:scale-105 group-hover:-translate-y-1
+                relative overflow-hidden w-full h-32 sm:h-40 md:h-56 lg:h-64
+                group-hover:scale-105 group-hover:-translate-y-2
               `}>
                 
                 {/* Rainbow Border Effect on Hover */}
@@ -160,23 +137,29 @@ export default function MenuSection() {
                   }
                 `}>
                   <div className={`
-                    w-full h-full rounded-xl
+                    w-full h-full rounded-sm
                     ${hoveredCategory === category.id 
                       ? 'bg-white' 
                       : 'bg-transparent'
                     }
-                    flex items-center justify-center
+                    flex items-center justify-center 
                   `}>
-                    {/* Icon */}
-                    <div className={`
-                      ${hoveredCategory === category.id 
-                        ? 'text-transparent bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text animate-pulse' 
-                        : category.iconColor
-                      } 
-                      transition-all duration-500 group-hover:scale-110
-                      relative z-10
-                    `}>
-                      {category.icon}
+                    {/* Image Container */}
+                    <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-lg">
+                      <img 
+                        src={category.image} 
+                        alt={category.name}
+                        className={`
+                          w-full h-full object-cover transition-all duration-500
+                          group-hover:scale-110 group-hover:rotate-1
+                          ${hoveredCategory === category.id 
+                            ? 'filter brightness-110 contrast-110' 
+                            : ''
+                          }
+                        `}
+                      />
+                      {/* Overlay for better text readability */}
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-300"></div>
                     </div>
                   </div>
                 </div>
@@ -188,9 +171,9 @@ export default function MenuSection() {
               </div>
 
               {/* Category Name */}
-              <div className="mt-4 text-center">
+              <div className="mt-3 sm:mt-4 text-center">
                 <h3 className={`
-                  font-semibold text-base transition-all duration-500
+                  font-semibold text-sm sm:text-base md:text-lg transition-all duration-500
                   ${hoveredCategory === category.id 
                     ? 'text-transparent bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text font-bold' 
                     : 'text-gray-700'
@@ -199,13 +182,13 @@ export default function MenuSection() {
                   {category.name}
                 </h3>
               </div>
-            </div>
+            </BlurFade>
           ))}
         </div>
 
         {/* View Full Menu Button */}
         
-        <div className="flex justify-center items-center h-full mt-4">
+        <div className="flex justify-center items-center h-full mt-8">
           <a
             href="/menu"
             // onClick={() => setToggleMenu(false)}

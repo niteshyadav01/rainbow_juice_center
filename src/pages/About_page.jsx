@@ -1,7 +1,7 @@
 import AboutSection from '../container/About/about';
 import React from 'react';
 import { motion } from 'framer-motion';
-import Bgimg from '../assets/rainbow_shop_img.jpg';
+import Bgimg from '../assets/about_banner.jpg';
 
 
 

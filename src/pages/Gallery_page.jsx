@@ -23,14 +23,14 @@ import overlaybg from "../assets/overlaybg.png";
 import rainbow_logo from "../assets/rainbow_logo.png";
 import hero_1 from "../assets/hero_1.jpg";
 import about from "../assets/about.JPG";
-
+import menu_banner from '../assets/menu_banner.webp';
 const Gallery_page = () => {
   return (
     <div className="min-h-screen  pt-2 md:pt-0 relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
       <section className="  relative h-[30vh] sm:h-[45vh] md:h-[50vh] lg:h-[60vh] flex items-center justify-center text-center text-white overflow-hidden mb-8 sm:mb-12 pt-14 md:pt-0 ">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${Bgimg})` }}
+          style={{ backgroundImage: `url(${menu_banner})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
         <nav
